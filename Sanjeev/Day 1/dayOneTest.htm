@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Test 1</title>
+    <script>
+
+        var startCnt, endCnt;
+
+
+        function isDivisibleByDivisorOrHadDivisor(dividend, divisor) {
+            return ((((dividend - 1) % divisor) + 1 == divisor) || (dividend.toString().indexOf(divisor) != -1));
+        }
+
+
+        function funGame() {
+            var result = document.getElementById('result');
+            startCnt = document.getElementById('startCnt').value,
+            endCnt = document.getElementById('endCnt').value;
+            for (var i = startCnt; i <= endCnt; i++) {
+                var writeNumber='';
+
+                if (isDivisibleByDivisorOrHadDivisor(i, 3)) {
+                    writeNumber += "Hot";
+                }
+
+                if (isDivisibleByDivisorOrHadDivisor(i, 5)) {
+                   writeNumber += "Hotter";
+                }
+
+               result.innerHTML += (writeNumber ? writeNumber : i) + '<br>';
+               
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+<input type="text" id="startCnt">
+<input type="text" id="endCnt">
+<input type="button" value="Start" onclick="funGame()">
+<div id="result"></div>
+</body>
+</html>

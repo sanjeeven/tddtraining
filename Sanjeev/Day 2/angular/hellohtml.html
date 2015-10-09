@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="HelloAngular">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular.min.js"></script>
+    <script src="hello.js"></script>
+</head>
+<body ng-controller="HelloAngularCtrl">
+<input type="text" id="name" ng-model="name">
+<input type="button" value="sayHello" ng-click="sayHello()">
+<h1>{{msg}}</h1>
+</body>
+</html>

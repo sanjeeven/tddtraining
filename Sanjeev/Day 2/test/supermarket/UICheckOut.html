@@ -1,0 +1,47 @@
+<html>
+<head>
+<script type="text/javascript" src="checkout.js"></script>
+
+<script type="text/javascript">
+
+var cart = Cart.Billing();
+function addItem(){
+
+	var Item = document.getElementById('item').value;
+	cart.addItemToBasket(Item);
+document.getElementById('price').innerHTML = "Total Price " + cart.totalPrice;
+document.getElementById('addedItems').innerHTML = " Added Items to Basket :" +cart.basketItems;
+
+}
+
+function ResetCart()
+{
+	cart.ResetCart();
+	document.getElementById('price').innerHTML = "Total Price :" + cart.totalPrice;
+	document.getElementById('addedItems').innerHTML = cart.basketItems;
+
+}
+</script>
+
+</head>
+
+<body>
+
+	<input type="text" id="item">
+	<input type="button" value="AddItem" onclick="addItem()">
+	<input type="button" value="Reset" onclick="ResetCart()">
+
+<h1 id="price">
+
+
+</h1>
+
+
+<h1 id="addedItems">
+
+
+</h1>
+</body>
+
+
+</html>

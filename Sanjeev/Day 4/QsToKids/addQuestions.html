@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Questionaire">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        span{
+            font-weight: bold;
+        }
+    </style>
+<script src="angular.min.js"></script>
+    <script src="Qmodule.js"></script>
+    <script src="QController.js"></script>
+    <script src="Questionaire.js"></script>
+</head>
+<body ng-controller="QController">
+<h1> Add a Question :</h1><br>
+<form name="questions" id="questions">
+    <span>Question</span> : <input type="text" id="question" ng-model="question"><br><br>
+    <span>Option 1</span> : <input type="text" ng-model="option1" ><br>
+    <span>Option 2</span> : <input type="text" ng-model="option2" ><br>
+    <span>Option 3</span> : <input type="text" ng-model="option3" ><br>
+    <span>Option 4</span> : <input type="text" ng-model="option4" ><br><br>
+    <span>Answer</span> :   <input type="radio" ng-model="answer" value="1" name="anwer"> Option 1 |
+                            <input type="radio" ng-model="answer" value="2" name="anwer"> Option 2 |
+                            <input type="radio" ng-model="answer" value="3" name="anwer"> Option 3 |
+                            <input type="radio" ng-model="answer" value="4" name="anwer"> Option 4
+                            <br><br>
+    <br>
+<input type="button" value="Add Question" ng-click="submitQuestion()">
+</form>
+<span style="color:red" ng-bind="err"></span>
+</body>
+</html>
